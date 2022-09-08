@@ -1,0 +1,28 @@
+{
+   "plants": [
+    {
+        "species": "Monstera",
+        "name": "bill",
+        "lightReq": "bright indirect",
+        "id": 1
+    },
+    {
+        "species": "Snake Plant",
+        "name": "jeff",
+        "lightReq": "bright indirect",
+        "id": 2
+    },
+    {
+        "species": "Monstera",
+        "name": "Kevin",
+        "lightReq": "bright indirect",
+        "id": 3
+    },
+    {
+        "species": "Spider Plant",
+        "name": "jerry",
+        "lightReq": "bright indirect",
+        "id": 4
+    }
+   ]
+}
