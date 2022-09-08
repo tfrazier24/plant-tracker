@@ -1,0 +1,14 @@
+.plant-card {
+    padding: 10px 16px;
+    margin: 10px 0;
+    border-bottom: 1px solid #fafafa;
+}
+
+.plant-card:hover {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.plant-card h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
