@@ -18,7 +18,7 @@ return (
   }}
 >
 <BottomNavigationAction href="/" label="Home" icon={<HomeTwoTone />}/>
-  <BottomNavigationAction  label="New Plant" icon={<AddBoxRounded />}  />
+  <BottomNavigationAction  href="/plant_form" label="New Plant" icon={<AddBoxRounded />}  />
   <BottomNavigationAction label="Search" icon={<SearchRounded />} />
   <BottomNavigationAction href="/plants" label="Plants" icon={<LocalFloristRounded />} />
   

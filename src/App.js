@@ -7,6 +7,7 @@ import "./App.css";
 import Plant from "./components/plant/Plant";
 import Home from "./components/homepage";
 import Nav from "./components/nav/navbar";
+import PlantForm from "./components/plant/PlantForm";
 
 function App() {
  
@@ -15,6 +16,9 @@ function App() {
 
           <Routes>
               <Route path="/plants" element={<Plant />} />
+          </Routes>
+          <Routes>
+            <Route path="plant_form" element={<PlantForm />} />
           </Routes>
           <Routes>
             <Route path="" element={<Home />}></Route>
