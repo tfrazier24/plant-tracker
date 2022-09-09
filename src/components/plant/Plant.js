@@ -1,7 +1,6 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState, useContext } from 'react';
 import "./Plant.css"
-import { PlantContext } from './PlantProvider';
 
 export const Plant = () => {
 
@@ -9,18 +8,19 @@ export const Plant = () => {
         
     ]);
 
-    const { getAllPlants } = useContext(PlantContext);
 
     const handleDelete = (id) => {
         const newPlants = plants.filter(p => p.id !== id);
         setPlants(newPlants);
     }
 
+    //this fetch call will reach out to the JSON API and make a call requesting data
     useEffect(() => {
-        getAllPlants();
-        console.log(getAllPlants())
-    }, [])
+        fetch("http://localhost:8000/plants")
+        .then(response=>response.json())
+        .then(setPlants)
 
+    }, [])
 
 
     return (
