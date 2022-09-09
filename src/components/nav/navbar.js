@@ -1,7 +1,7 @@
 import React from "react";
 import { BottomNavigationAction } from '@mui/material';
 import { BottomNavigation } from "@mui/material";
-import { AddBoxRounded, HomeMaxRounded, LocalFloristRounded, SearchOffRounded, SearchRounded } from "@mui/icons-material";
+import { AddBoxRounded, HomeMaxRounded, HomeTwoTone, LocalFloristRounded, SearchOffRounded, SearchRounded } from "@mui/icons-material";
 import { useState } from "react";
 
 export const Nav = () => {
@@ -17,9 +17,11 @@ return (
     setValue(newValue);
   }}
 >
-  <BottomNavigationAction label="New Plant" icon={<AddBoxRounded />} />
+<BottomNavigationAction href="/" label="Home" icon={<HomeTwoTone />}/>
+  <BottomNavigationAction  label="New Plant" icon={<AddBoxRounded />}  />
   <BottomNavigationAction label="Search" icon={<SearchRounded />} />
-  <BottomNavigationAction label="Plants" icon={<LocalFloristRounded />} />
+  <BottomNavigationAction href="/plants" label="Plants" icon={<LocalFloristRounded />} />
+  
 </BottomNavigation>
 )
 
