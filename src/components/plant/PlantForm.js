@@ -26,9 +26,30 @@ const lightRequirements = [
 export const PlantForm = () => {
   const [lightRequirement, setlightRequirement] = useState("");
 
+  const [newPlant, setNewPlant] = useState({
+    species: "",
+    name: "",
+    lightReq: "",
+    id: 0
+  });
+
   const handleChange = (event) => {
     setlightRequirement(event.target.value);
   };
+
+  const savePlant = () => {
+    //need to send something to the database
+    fetch("http://localhost:8000/plants", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }, 
+        body: JSON.stringify(newPlant)
+    })
+    .then(() => {
+        alert("Plant added!");
+    })
+  }
 
   return (
     <Box
@@ -41,14 +62,30 @@ export const PlantForm = () => {
     >
       <div>
         <h1 className="plant-form-header">Create your new plant!</h1>
-        <TextField id="standard-basic" label="Name" variant="standard" />
-        <TextField id="standard-basic" label="Species" variant="standard" />
+        <TextField id="standard-basic" label="Name" variant="standard"
+        onChange={(event) => {
+            const copyOfState = { ...newPlant };
+            copyOfState.name = event.target.value;
+            setNewPlant(copyOfState);
+          }}
+        />
+        <TextField id="standard-basic" label="Species" variant="standard"
+        
+        onChange={(event) => {
+            const copyOfState = { ...newPlant };
+            copyOfState.species = event.target.value;
+            setNewPlant(copyOfState);
+          }}/>
         <TextField
           id="outlined-select-light-requirement"
           select
           label="Light"
           value={lightRequirement}
-          onChange={handleChange}
+          onChange={(event) => {
+            const copyOfState = { ...newPlant };
+            copyOfState.lightReq = event.target.value;
+            setNewPlant(copyOfState);
+          }}
           helperText="Please select your light requirement"
         >
           {lightRequirements.map((option) => (
@@ -58,7 +95,12 @@ export const PlantForm = () => {
           ))}
         </TextField>
         <div>
-        <Button variant="contained">Confirm</Button>
+        <Button variant="contained"
+         onClick={savePlant}
+          
+         >
+            Confirm
+         </Button>
         </div>
       </div>
     </Box>
@@ -67,58 +109,3 @@ export const PlantForm = () => {
 
 export default PlantForm;
 
-// const lightRequirements = [
-//     {
-//       value: "Bright",
-//       Description: "n/a",
-//     },
-//     {
-//       value: "Bright Indirect",
-//       Description: "n/a",
-//     },
-//     {
-//       value: "Low Light",
-//       Description: "n/a",
-//     },
-//     {
-//       value: "Medium Light",
-//       Description: "n/a",
-//     },
-//   ];
-
-// const [lightReq, setLightReq] = useState(lightRequirements);
-
-// const handleChange = () => {
-//     setLightReq(lightReq);
-//   };
-
-// return (
-
-// <Box
-// component="form"
-// sx={{
-//   '& .MuiTextField-root': { m: 1, width: '25ch' },
-// }}
-// noValidate
-// autoComplete="off"
-// >
-// <div className="plant-form">
-
-// <TextField
-//       id="outlined-select-light-req"
-//       select
-//       label="Select"
-//       value={lightReq}
-//       onChange={handleChange}
-//       helperText="Please select your Light Requirement"
-//     >
-//         {lightRequirements.map((option) => {
-//             <MenuItem key={option.value} value={option.value}>
-//                 {option.Description}
-//             </MenuItem>
-//         })}
-//         </TextField>
-
-// </div>
-// </Box>
-// );
