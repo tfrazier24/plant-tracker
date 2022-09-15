@@ -1,34 +1,28 @@
 {
   "plants": [
     {
-      "species": "Monstera",
-      "name": "bill",
+      "species": "Snake Plant",
+      "name": "jeff",
       "lightReq": "bright indirect",
       "id": 1
     },
     {
       "species": "Snake Plant",
-      "name": "jeff",
-      "lightReq": "bright indirect",
+      "name": "Billy",
+      "lightReq": "Low Light",
       "id": 2
     },
     {
-      "species": "Monstera",
-      "name": "Kevin",
-      "lightReq": "bright indirect",
+      "species": "Spider Plant",
+      "name": "Charles",
+      "lightReq": "Bright Indirect",
       "id": 3
     },
     {
-      "species": "Spider Plant",
-      "name": "jerry",
-      "lightReq": "bright indirect",
-      "id": 4
-    },
-    {
-      "species": "Monstera",
-      "name": "Thomas",
+      "species": "Bonsai Tree",
+      "name": "Hagrid",
       "lightReq": "Bright Indirect",
-      "id": 5
+      "id": 4
     }
   ]
 }

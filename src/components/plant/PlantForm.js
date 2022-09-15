@@ -3,6 +3,7 @@ import { Button, ButtonBase, MenuItem, Select, TextField } from "@mui/material";
 import { useState } from "react";
 import { Box } from "@mui/system";
 import { ButtonUnstyled } from "@mui/base";
+import { useParams } from "react-router-dom";
 
 const lightRequirements = [
   {
@@ -33,6 +34,8 @@ export const PlantForm = () => {
     id: 0
   });
 
+
+
   const handleChange = (event) => {
     setlightRequirement(event.target.value);
   };
@@ -50,6 +53,8 @@ export const PlantForm = () => {
         alert("Plant added!");
     })
   }
+
+
 
   return (
     <Box
