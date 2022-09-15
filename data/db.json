@@ -23,6 +23,12 @@
       "name": "jerry",
       "lightReq": "bright indirect",
       "id": 4
+    },
+    {
+      "species": "Monstera",
+      "name": "Thomas",
+      "lightReq": "Bright Indirect",
+      "id": 5
     }
   ]
 }
