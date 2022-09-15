@@ -1,22 +1,18 @@
 import { DeleteForeverRounded } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React, { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 import "./Plant.css";
 
 export const Plant = () => {
   const [plants, setPlants] = useState([]);
-
-  const handleDelete = (id) => {
-    const newPlants = plants.filter((p) => p.id !== id);
-    setPlants(newPlants);
-  };
 
   //this fetch call will reach out to the JSON API and make a call requesting data
   useEffect(() => {
     fetch("http://localhost:8000/plants")
       .then((response) => response.json())
       .then(setPlants);
-  }, []);
+  }, [setPlants]);
 
   //Delete Button needs to be centered within it's div or container
 
@@ -32,8 +28,10 @@ export const Plant = () => {
             {plant.name} is a {plant.species}
           </p>
           <Button
-            onClick={() => handleDelete(plant.id)}
             endIcon={<DeleteForeverRounded />}
+            onClick={() => {
+                fetch(`http://localhost:8000/plants/${plant.id}`, { method: "DELETE"})
+            }}
           ></Button>
         </div>
       ))}
