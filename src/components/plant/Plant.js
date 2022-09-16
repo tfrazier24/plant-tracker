@@ -1,7 +1,6 @@
-import { DeleteForeverRounded } from "@mui/icons-material";
+import { DeleteForeverRounded, Edit} from "@mui/icons-material";
 import { Button } from "@mui/material";
-import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./Plant.css";
 
 export const Plant = () => {
@@ -27,6 +26,10 @@ export const Plant = () => {
           <p>
             {plant.name} is a {plant.species}
           </p>
+          <Button 
+          endIcon={<Edit />}
+          href={`/plants/${plant.id}/edit`}
+          ></Button>
           <Button
             endIcon={<DeleteForeverRounded />}
             onClick={() => {
