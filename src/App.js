@@ -8,6 +8,7 @@ import Plant from "./components/plant/Plant";
 import Home from "./components/homepage";
 import Nav from "./components/nav/navbar";
 import PlantForm from "./components/plant/PlantForm";
+import PlantEdit from "./components/plant/PlantEdit";
 
 function App() {
  
@@ -22,6 +23,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="" element={<Home />}></Route>
+          </Routes>
+          <Routes>
+            <Route path="/plants/:plantId/edit" element={<PlantEdit />}></Route>
           </Routes>
           <Nav />
       </div>
