@@ -1,9 +1,30 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Box, TextField } from '@mui/material';
+import { Box, TextField, MenuItem } from '@mui/material';
+
+const lightRequirements = [
+    {
+      value: "Bright",
+      label: "Bright",
+    },
+    {
+      value: "Bright Indirect",
+      label: "Bright Indirect",
+    },
+    {
+      value: "Low Light",
+      label: "Low Light",
+    },
+    {
+      value: "Medium Light",
+      label: "Medium Light",
+    },
+  ];
 
 export const PlantEdit = () => {
+
+    const [lightRequirement, setlightRequirement] = useState("");
     
     const [plant, assignPlant] = useState({
         species: "",
@@ -65,9 +86,16 @@ return (
       />
        <TextField
         id="standard-basic"
+        select
         label="Light Requirement "
         variant="standard"
-      />
+        >
+              {lightRequirements.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
     </div>
   </Box>
 )
